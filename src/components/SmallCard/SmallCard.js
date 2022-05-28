@@ -2,7 +2,7 @@
 
 function SmallCard(props) {
     const {day, icon, maxTemp, minTemp, hum} = props
-
+    console.log(day)
 
     return ( 
         <div className="SmallCard">

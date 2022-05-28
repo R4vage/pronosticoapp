@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import searchImg from "../../assets/search.svg"
 import { useFetch } from "../../hooks/useFetch";
-import {countSlice} from "../../store"
+import { countSlice } from "../../store"
 import { useDispatch } from "react-redux";
 
 //La idea aca es crear un search, en el cual el usuario coloca la ciudad como le pinte, y le devuelve los 5 valores mas cercanos a su input. 
@@ -9,13 +9,8 @@ import { useDispatch } from "react-redux";
 function ListCities() {
     const dispatch = useDispatch();
     const searchRef = useRef();
-    
-
     const [searchName, setSearchName] = useState("Buenos Aires")
-    const { data } = useFetch({ url: `geo/1.0/direct?q=${searchName}&limit=5&appid=8a5e9515a6583a0a93a8e614d848ffb5` });  //Esta api es la de geolocalización, permite traducir ciudades a lat y long.
-    
-    console.log(data)
-    
+    const { data } = useFetch({ url: `geo/1.0/direct?q=${searchName}&limit=5&appid=2a062aa21b035ce8da2c7c7700011d90` });  //Esta api es la de geolocalización, permite traducir ciudades a lat y long.
     
     function handleSearchClick() {
         setSearchName(searchRef.current.value)
@@ -49,13 +44,13 @@ function ListCities() {
                 </thead>
                 <tbody>
                     
-                    { data?.map( city=> 
-                        <tr onClick={()=> handleCityClick({lat:city.lat, lon:city.lon, name:city.name})}>
-                            <td>{city.name}</td>
-                            <td>{city.country}</td>
-                            <td>{city.state}</td>
-                            <td>{city.lat}</td>
-                            <td>{city.lon}</td>
+                    { data?.map( city => 
+                        <tr key={data.lat} onClick={()=> handleCityClick({lat:city.lat, lon:city.lon, name:city.name})}>
+                            <td key={data.lat}>{city.name}</td>
+                            <td key={data.lat}>{city.country}</td>
+                            <td key={data.lat}>{city.state}</td>
+                            <td key={data.lat}>{city.lat}</td>
+                            <td key={data.lat}>{city.lon}</td>
                         </tr>)
                     }
 

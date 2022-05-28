@@ -6,7 +6,6 @@ export function useFetch({ url }) {
 
   const fetchUrl = useCallback(async () => {
     const response = await apiOpenWeather.get(url);
-    console.log("response", response.data)
     setData(response.data);
   }, [url]);
 

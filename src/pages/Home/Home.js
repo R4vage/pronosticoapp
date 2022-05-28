@@ -1,5 +1,5 @@
 import React from "react";
-import { MainCard, ListCities, Navbar } from "../../components";
+import { MainCard, ListCities, Navbar, ListCards } from "../../components";
 
 
 function Home() {
@@ -7,6 +7,7 @@ function Home() {
             <div className="Home">
                 <Navbar />
                 <MainCard/>
+                <ListCards/>
                 <ListCities/>
             </div>
      );
