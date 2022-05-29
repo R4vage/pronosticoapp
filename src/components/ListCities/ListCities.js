@@ -3,6 +3,7 @@ import searchImg from "../../assets/search.svg"
 import { useFetch } from "../../hooks/useFetch";
 import { countSlice } from "../../store"
 import { useDispatch } from "react-redux";
+import "./ListCities.css"
 
 //La idea aca es crear un search, en el cual el usuario coloca la ciudad como le pinte, y le devuelve los 5 valores mas cercanos a su input. 
 //Luego selecciona uno de ellos, y de ahi sacamos la lat y long, y la llevamos al Main Card.
@@ -24,17 +25,18 @@ function ListCities() {
   
     return (
       <div className="ListCities">
-          
+          <div className="ListCities--Search">
           <input id="search" name="search" ref={searchRef} placeholder="Ingrese una ciudad" className="ListCities--search--input" onKeyPress={(e) => {
                           if (e.key === "Enter") {
                             handleSearchClick()
                           }
                       }}/>
           <button className="ListCities--search--button" onClick={handleSearchClick}><img src={searchImg} alt="Search Button"/></button>
+          </div>
             
-            <table>
+            <table className="ListCities--table">
                 <thead>
-                    <tr>
+                    <tr className="ListCities--table--head">
                         <th>Name</th>
                         <th>Country</th>
                         <th>State/Province</th>
@@ -45,7 +47,7 @@ function ListCities() {
                 <tbody>
                     
                     { data?.map( city => 
-                        <tr key={data.lat} onClick={()=> handleCityClick({lat:city.lat, lon:city.lon, name:city.name})}>
+                        <tr key={data.lat} onClick={()=> handleCityClick({lat:city.lat, lon:city.lon, name:city.name})} className="ListCities--table--row">
                             <td key={data.lat}>{city.name}</td>
                             <td key={data.lat}>{city.country}</td>
                             <td key={data.lat}>{city.state}</td>

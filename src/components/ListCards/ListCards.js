@@ -1,10 +1,11 @@
 import { useSelector } from "react-redux";
 import { useFetch } from "../../hooks/useFetch";
 import SmallCard from "../SmallCard";
+import "./ListCards.css"
 
 
 
-function ListCard() {
+function ListCards() {
     const selectedCity = useSelector((state) => state.currentlySelected);
     const { data } = useFetch({ url: `data/2.5/onecall?lat=${selectedCity.lat}&lon=${selectedCity.lon}&cnt=5&appid=2a062aa21b035ce8da2c7c7700011d90&units=metric&exclude=current,minutely,hourly,alerts` });
     console.log(data)
@@ -19,7 +20,7 @@ function ListCard() {
     console.log(toDate(data?.daily[2].dt))
 
     return ( 
-        <div className="ListCard">
+        <div className="ListCards">
              { data?.daily?.map( day => 
             <SmallCard day={`${toDate(day.dt)}`} icon={day.weather[0].icon}/>
             )} 
@@ -27,4 +28,4 @@ function ListCard() {
      );
 }
 
-export default ListCard;
+export default ListCards;

@@ -1,0 +1,16 @@
+.SmallCard{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-inline: 1em;
+    padding-bottom: 1em;
+    
+    background-color: hsl(0, 0%, 100%, 75%);
+    border-radius: 15px;
+    margin-block: 1em;
+}
+
+.SmallCard--img {
+
+    width: 50px;
+}

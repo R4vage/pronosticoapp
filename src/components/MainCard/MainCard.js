@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import { useFetch } from "../../hooks/useFetch";
 import { useImg } from "../../hooks/useImg";
+import "./MainCard.css"
 
 
 function MainCard() {
@@ -9,9 +10,14 @@ function MainCard() {
     const { selectedImg } = useImg (data?.weather[0]?.icon)
     return (
     <div className="MainCard">
-        <h2 className="MainCard--title">{selectedCity.name}</h2>
-        <p className="MainCard--date">{Date()}</p>
-        <img alt="weatherIcon" className="MainCard--icon" src={selectedImg}/>
+        <div className="MainCard--Left">
+            <h2 className="MainCard--title">{selectedCity.name}</h2>
+            <p className="MainCard--date">{Date()}</p>
+            <img alt="weatherIcon" className="MainCard--icon" src={selectedImg}/>
+        </div>
+        <div className="MainCard--Right">
+            
+        </div>
     </div>  );
 }
 

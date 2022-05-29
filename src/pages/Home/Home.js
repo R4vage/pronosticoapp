@@ -1,5 +1,6 @@
 import React from "react";
 import { MainCard, ListCities, Navbar, ListCards } from "../../components";
+import "./Home.css"
 
 
 function Home() {

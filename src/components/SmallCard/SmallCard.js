@@ -1,4 +1,5 @@
 import { useImg } from "../../hooks/useImg";
+import "./SmallCard.css"
 
 
 function SmallCard(props) {
@@ -7,7 +8,8 @@ function SmallCard(props) {
 
     return ( 
         <div className="SmallCard">
-            <h2>{day}<img src={selectedImg}/></h2>
+            <h2>{day}</h2>
+            <img src={selectedImg} className="SmallCard--img"/>
 
 
         </div>
