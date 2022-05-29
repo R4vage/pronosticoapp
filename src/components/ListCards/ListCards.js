@@ -21,7 +21,7 @@ function ListCard() {
     return ( 
         <div className="ListCard">
              { data?.daily?.map( day => 
-            <SmallCard day={`${toDate(day.dt)}`}/>
+            <SmallCard day={`${toDate(day.dt)}`} icon={day.weather[0].icon}/>
             )} 
         </div>
      );
