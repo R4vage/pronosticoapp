@@ -10,15 +10,18 @@ import "./ListCities.css"
 function ListCities() {
     const dispatch = useDispatch();
     const searchRef = useRef();
-    const [searchName, setSearchName] = useState("Buenos Aires")
+    const [searchName, setSearchName] = useState(null)
     const { data } = useFetch({ url: `geo/1.0/direct?q=${searchName}&limit=5&appid=2a062aa21b035ce8da2c7c7700011d90` });  //Esta api es la de geolocalización, permite traducir ciudades a lat y long.
     
     function handleSearchClick() {
         setSearchName(searchRef.current.value)
+        window.scrollTo(0, document.body.scrollHeight);
+        console.log(data)
     }
 
     function handleCityClick(city){ 
         dispatch(countSlice.actions.setChangeSelected(city))
+        window.scrollTo(0,0)
         
     }
 
@@ -34,7 +37,7 @@ function ListCities() {
           <button className="ListCities--search--button" onClick={handleSearchClick}><img src={searchImg} alt="Search Button"/></button>
           </div>
             
-            <table className="ListCities--table">
+           {(data?.length === 0)? <p> No city found with that name</p> : searchName && <table className="ListCities--table">
                 <thead>
                     <tr className="ListCities--table--head">
                         <th>Name</th>
@@ -47,18 +50,18 @@ function ListCities() {
                 <tbody>
                     
                     { data?.map( city => 
-                        <tr key={data.lat} onClick={()=> handleCityClick({lat:city.lat, lon:city.lon, name:city.name})} className="ListCities--table--row">
-                            <td key={data.lat}>{city.name}</td>
-                            <td key={data.lat}>{city.country}</td>
-                            <td key={data.lat}>{city.state}</td>
-                            <td key={data.lat}>{city.lat}</td>
-                            <td key={data.lat}>{city.lon}</td>
+                        <tr key={city.lat + city.lon} onClick={()=> handleCityClick({lat:city.lat, lon:city.lon, name:city.name})} className="ListCities--table--row">
+                            <td >{city.name}</td>
+                            <td >{city.country}</td>
+                            <td >{city.state}</td>
+                            <td >{city.lat}</td>
+                            <td >{city.lon}</td>
                         </tr>)
                     }
 
                 </tbody>
 
-            </table>
+            </table>}
       </div>
       
     )

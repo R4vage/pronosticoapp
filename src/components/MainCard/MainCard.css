@@ -6,3 +6,30 @@
     align-items: center;
     background-color: hsl(0, 0%, 100%, 75%);
 }
+
+.MainCard--Left{
+    padding: 2em;
+    width: 40vw;
+}
+
+.MainCard--Right{
+    padding: 2em;
+    width: 40vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.MainCard--icon{
+    width: 35vw;
+}
+
+.MainCard--Right div{
+    height: 30%;
+    display: flex;
+    gap: 1em;
+    align-items: center;
+}
+
+.MainCard--Right div img{
+max-height: 30px;
+}

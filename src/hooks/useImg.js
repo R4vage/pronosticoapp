@@ -9,8 +9,21 @@ import img10d from "../assets/Weather/10d.png"
 import img11d from "../assets/Weather/11d.png"
 import img13d from "../assets/Weather/13d.png"
 import img50d from "../assets/Weather/50d.png"
+import wind from "../assets/Weather/wind.png"
+import minTemp from "../assets/Weather/minTemp.png"
+import maxTemp from "../assets/Weather/maxTemp.png"
+import avgTemp from "../assets/Weather/avgTemp.png"
+import humidity from "../assets/Weather/humidity.png"
+import pressure from "../assets/Weather/pressure.png"
+import feelsHot from "../assets/Weather/feelsHot.png"
+import feelsCold from "../assets/Weather/feelsCold.png"
+import feelsGood from "../assets/Weather/feelsGood.png"
+import windDir from "../assets/Weather/windDir.png"
+import gitHub from "../assets/Weather/gitHub.png"
+import linkedIn from "../assets/Weather/linkedIn.png"
 
-export function useImg( icon ) { //No era necesario hacer un custom hook para esto pero bueno. Estas imagenes son mas grandes, y mas detalladas, para usar en el main card
+
+export function useImg( icon ) { //No era necesario hacer un custom hook para esto pero bueno. Estas imagenes son mas grandes, que las que trae el fetch, y mas detalladas, para usar en el main card
     const imgList = {
         "01d": img01d,
         "01n": img01n,
@@ -27,5 +40,5 @@ export function useImg( icon ) { //No era necesario hacer un custom hook para es
         "50d": img50d,
     }
     const selectedImg = imgList[icon]
-    return { selectedImg };
+    return { selectedImg, wind, minTemp, maxTemp, avgTemp, humidity, pressure, feelsGood, feelsCold, feelsHot, windDir, gitHub, linkedIn };
   }

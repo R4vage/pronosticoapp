@@ -6,4 +6,5 @@
     border-radius: 15px;
     width: 80vw;
     background-color: hsl(0, 0%, 100%, 75%);
+    flex-wrap: wrap;
 }

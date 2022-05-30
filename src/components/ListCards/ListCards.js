@@ -14,15 +14,13 @@ function ListCards() {
         let day = newDate.getDate()
         let month = newDate.getMonth()
         let dayMonth= day+"/"+month 
-        
         return dayMonth
     }
-    console.log(toDate(data?.daily[2].dt))
 
     return ( 
         <div className="ListCards">
              { data?.daily?.map( day => 
-            <SmallCard day={`${toDate(day.dt)}`} icon={day.weather[0].icon}/>
+            <SmallCard key={day?.dt} day={`${toDate(day.dt)}`} icon={day.weather[0].icon}/>
             )} 
         </div>
      );

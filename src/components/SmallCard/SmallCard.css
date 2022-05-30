@@ -4,10 +4,10 @@
     align-items: center;
     padding-inline: 1em;
     padding-bottom: 1em;
-    
+    width: 8em;
     background-color: hsl(0, 0%, 100%, 75%);
     border-radius: 15px;
-    margin-block: 1em;
+    margin: 1em;
 }
 
 .SmallCard--img {
