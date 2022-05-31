@@ -21,6 +21,7 @@ import feelsGood from "../assets/Weather/feelsGood.png"
 import windDir from "../assets/Weather/windDir.png"
 import gitHub from "../assets/Weather/gitHub.png"
 import linkedIn from "../assets/Weather/linkedIn.png"
+import cross from "../assets/cross.png"
 
 
 export function useImg( icon ) { //No era necesario hacer un custom hook para esto pero bueno. Estas imagenes son mas grandes, que las que trae el fetch, y mas detalladas, para usar en el main card
@@ -40,5 +41,5 @@ export function useImg( icon ) { //No era necesario hacer un custom hook para es
         "50d": img50d,
     }
     const selectedImg = imgList[icon]
-    return { selectedImg, wind, minTemp, maxTemp, avgTemp, humidity, pressure, feelsGood, feelsCold, feelsHot, windDir, gitHub, linkedIn };
+    return { cross, selectedImg, wind, minTemp, maxTemp, avgTemp, humidity, pressure, feelsGood, feelsCold, feelsHot, windDir, gitHub, linkedIn };
   }

@@ -1,0 +1,73 @@
+.ListFavorites{
+    background-color: hsl(0, 0%, 100%, 75%);
+    border-radius: 15px;
+    padding: 1em;
+    width: 80vw;
+}
+
+.FavouriteCard{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5em;
+    
+    width: max-content;
+}
+
+.FavouriteCard--container{
+    display: flex;
+    max-height: 200px;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 15px;
+    width: 70vw;
+    background-color: hsl(0, 0%, 100%, 75%);
+    font-size: var(--fs-h3b);
+    padding-block: 0.5em;
+    padding-inline:1em ;
+    margin-block: 1em ;
+    cursor: pointer;
+}
+
+.FavouriteCard div{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+
+.FavouriteCard img{
+    width: 45px;
+}
+
+@media (max-width:800px) {
+    .FavouriteCard{
+    width: 90vw;}
+}
+
+.FavouriteCard--remove{
+    cursor: pointer;
+    transition: all 200ms ease-in-out;
+}
+
+.FavouriteCard--remove:hover{
+    transform: scale(1.2) rotate(180deg);
+    
+}
+
+.favouritesButton{
+    border: none;
+    cursor: pointer;
+    padding: 1em;
+    font-family: 'Playfair Display', serif;
+    background: rgb(34,193,195);
+    border-radius: 15px;
+    transition: all 200ms ease-in-out;
+    text-transform: uppercase;
+    z-index: 10;
+}
+
+.favouritesButton:hover{
+    transform: scale(1.1);
+    box-shadow: 10px 10px;
+}

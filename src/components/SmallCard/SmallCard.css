@@ -4,13 +4,28 @@
     align-items: center;
     padding-inline: 1em;
     padding-bottom: 1em;
-    width: 8em;
+    max-width: 250px;
     background-color: hsl(0, 0%, 100%, 75%);
     border-radius: 15px;
     margin: 1em;
 }
 
-.SmallCard--img {
+.SmallCard img {
 
     width: 50px;
+}
+
+.SmallCard div{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 1em;
+}
+
+.SmallCard p{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    size: max-content;
+    white-space: nowrap;
 }

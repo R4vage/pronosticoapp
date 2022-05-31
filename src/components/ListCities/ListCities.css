@@ -21,6 +21,7 @@
 }
 
 .ListCities--search--input{
+    all: none;
     width: 100%;
     height: 2.5em;
     border: none;
@@ -28,6 +29,9 @@
     padding: 0.5em;
     border: 0 rgba(0,0,0,.2);
     color: #333;
+    font-family: 'Playfair Display', serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .ListCities--search--button{
@@ -104,4 +108,7 @@ table tr:last-child td:last-child {
     border-bottom-right-radius: 10px;
 }
 
-
+@media (max-width:800px) {
+    .ListCities{
+    width: 90vw;}
+}

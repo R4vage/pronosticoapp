@@ -8,3 +8,8 @@
     background-color: hsl(0, 0%, 100%, 75%);
     flex-wrap: wrap;
 }
+
+@media (max-width:800px) {
+    .ListCards{
+    width: 90vw;}
+}
