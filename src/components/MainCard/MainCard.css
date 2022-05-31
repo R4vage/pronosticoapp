@@ -1,22 +1,29 @@
 .MainCard{
     display: flex;
-    background-color: white;
     border-radius: 15px;
     width: 80vw;
     align-items: center;
     background-color: hsl(0, 0%, 100%, 75%);
+    margin-top: 6em;
+ 
+    padding: 3em;
 }
 
 .MainCard--Left{
-    padding: 2em;
     width: 40vw;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
 }
 
 .MainCard--Right{
-    padding: 2em;
+    
     width: 40vw;
     display: flex;
     flex-direction: column;
+    font-size: var(--fs-body);
+    align-items: center;
+ 
 }
 
 .MainCard--icon{
@@ -32,4 +39,27 @@
 
 .MainCard--Right div img{
 max-height: 30px;
+}
+
+@media (max-width:800px) {
+    .MainCard{
+        flex-direction: column;
+        width: 90vw;
+
+    }
+    .MainCard--icon{
+        width: 50vw;
+    }
+
+    .MainCard--Right{
+        padding: 2em;
+        width: 90vw;
+    }
+    .MainCard--Left{
+        width: 90vw;
+    }
+}
+
+.favouritesButton{
+    z-index: 5;
 }
