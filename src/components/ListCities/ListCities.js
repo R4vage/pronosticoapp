@@ -16,7 +16,6 @@ function ListCities() {
     function handleSearchClick() {
         setSearchName(searchRef.current.value)
         window.scrollTo(0, document.body.scrollHeight);
-        console.log(data)
     }
 
     function handleCityClick(city){ 

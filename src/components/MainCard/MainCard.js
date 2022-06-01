@@ -19,7 +19,6 @@ function MainCard() {
             }
         }
     }
-    console.log(data)
     function handleAddClick(){ 
         dispatch(countSlice.actions.addFavourite(selectedCity)) 
     }
