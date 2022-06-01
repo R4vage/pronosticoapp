@@ -15,7 +15,6 @@ function ListCards() {
         let dayMonth= day+"/"+month 
         return dayMonth
     }
-    console.log(data)
     return ( 
         <div className="ListCards">
              { data?.daily?.map( day => 

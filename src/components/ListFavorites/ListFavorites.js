@@ -5,9 +5,6 @@ import "./ListFavourites.css"
 
 function ListFavorites() {
     const favouriteList = useSelector((state) => state.favourites);
-    console.log(favouriteList)
-
-
     return ( 
     <div className="ListFavorites">
                 { favouriteList?.map( favourite => 

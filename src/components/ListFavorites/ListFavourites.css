@@ -8,10 +8,8 @@
 .FavouriteCard{
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 0.5em;
-    
     width: max-content;
+    gap: 3vw;
 }
 
 .FavouriteCard--container{
@@ -38,10 +36,11 @@
 
 .FavouriteCard img{
     width: 45px;
+
 }
 
 @media (max-width:800px) {
-    .FavouriteCard{
+    .ListFavorites{
     width: 90vw;}
 }
 
