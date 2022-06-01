@@ -3,8 +3,8 @@ import { configureStore, createSlice } from "@reduxjs/toolkit";
 
 
 const initialState = localStorage.getItem('reduxState') ? JSON.parse(localStorage.getItem('reduxState')):{
-    currentlySelected: {lat:-34.6075682, lon:-58.4370894, name: "Autonomous City of Buenos Aires"}, //Por ahora guardo la latitud ,longitud, los cuales se van a usar en en la api de current weather y el nombre
-    favourites: [{lat:-34.6075682, lon:-58.4370894, name: "Autonomous City of Buenos Aires"}],
+    currentlySelected: {lat:-34.9206797, lon:-57.9537638, name: "La Plata"}, //Por ahora guardo la latitud ,longitud, los cuales se van a usar en en la api de current weather y el nombre
+    favourites: [],
     count:0
 };
 
